@@ -1,15 +1,15 @@
 import UIKit
 import ohMyPostBase
 
-class PostCollectionViewCell: UICollectionViewCell {
+class PostTableViewCell: UITableViewCell {
     static let identifier = "PostCollectionViewCell"
     
     private var titleLabel: UILabel!
     private var subTitleLabel: UILabel!
     private var iconImageView: UIImageView!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.contentView.do {
             $0.backgroundColor = .white

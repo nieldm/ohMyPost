@@ -9,10 +9,11 @@ class PostsViewController: UIViewController {
 
     private let viewModel: PostViewModel
     private let disposeBag = DisposeBag()
+    fileprivate let data = Variable<[Post]>([])
     
-    fileprivate var collectionView: UICollectionView! {
+    fileprivate var tableView: UITableView! {
         didSet {
-            self.configureCollectionView()
+            self.configureTableView()
         }
     }
     
@@ -39,49 +40,61 @@ class PostsViewController: UIViewController {
             self.navigationItem.rightBarButtonItem = $0
         }
         
-        let flowLayout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout).then {
+        self.tableView = UITableView(frame: .zero, style: .grouped).then {
             self.view.addSubview($0)
             $0.snp.makeConstraints { make in
                 make.top.left.right.bottom.equalToSuperview()
             }
+            $0.rowHeight = 120
             $0.backgroundColor = .lightGrayBG
-            $0.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
+            $0.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
             $0.showsVerticalScrollIndicator = false
         }
-        self.collectionView = collectionView
     }
     
-    private func configureCollectionView() {
-        let dataSource = RxCollectionViewSectionedAnimatedDataSource<SectionOfPosts>(configureCell: { (_, cv: UICollectionView, ip: IndexPath, item: Post) -> UICollectionViewCell in
-            guard let cell = cv.dequeueReusableCell(withReuseIdentifier: PostCollectionViewCell.identifier, for: ip) as? PostCollectionViewCell else {
-                return UICollectionViewCell()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.viewModel.rx.getPosts()
+            .subscribe(onNext: { [weak self] posts in
+                self?.data.value = posts
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func configureTableView() {
+        let dataSource = RxTableViewSectionedAnimatedDataSource<SectionOfPosts>(configureCell: { (_, tv: UITableView, ip: IndexPath, item: Post) -> UITableViewCell in
+            guard let cell = tv.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: ip) as? PostTableViewCell else {
+                return UITableViewCell(frame: .zero)
             }
             return cell.then {
                 $0.set(data: item)
             }
         })
-        self.viewModel.rx.getPosts()
+        dataSource.canEditRowAtIndexPath = { _, _ in true }
+        
+        self.data.asObservable()
             .map { [SectionOfPosts(header: "Initial", items: $0)] }
-            .bind(to: self.collectionView.rx.items(dataSource: dataSource))
+            .bind(to: self.tableView.rx.items(dataSource: dataSource))
             .disposed(by: self.disposeBag)
-
-        let _ = self.collectionView.rx.setDelegate(self)
+        
+        let _ = self.tableView.rx.setDelegate(self)
+        
+        self.tableView.rx.modelDeleted(Post.self)
+            .subscribe { [weak self] event in
+                self?.data.value = self?.data.value.filter { event.element != $0 } ?? []
+            }
+            .disposed(by: disposeBag)
     }
 
 }
 
-extension PostsViewController: UICollectionViewDelegateFlowLayout {
+extension PostsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .destructive, title: "DELETE") { (action, indexPath) in
+            self.tableView.dataSource?.tableView!(self.tableView, commit: .delete, forRowAt: indexPath)
+            return
+        }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0)
+        return [deleteButton]
     }
-    
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(
-            width: collectionView.frame.size.width,
-            height: 120
-        )
-    }
-    
 }

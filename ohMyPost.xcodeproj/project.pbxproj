@@ -20,10 +20,15 @@
 		B118F05D218F68A500E7DBB8 /* OMPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F05C218F68A500E7DBB8 /* OMPRepository.swift */; };
 		B118F05F218F6AE300E7DBB8 /* OMPRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F05E218F6AE300E7DBB8 /* OMPRepositoryTest.swift */; };
 		B118F061218F6BF600E7DBB8 /* PostModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F060218F6BF600E7DBB8 /* PostModelTest.swift */; };
-		B1270E0B218F6F5100322750 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1270E0A218F6F5100322750 /* PostsViewController.swift */; };
 		B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AAB0A218F59F40061FE84 /* AppDelegate.swift */; };
 		B12AAB12218F59F50061FE84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12AAB11218F59F50061FE84 /* Assets.xcassets */; };
 		B12AAB15218F59F50061FE84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12AAB13218F59F50061FE84 /* LaunchScreen.storyboard */; };
+		B194F930218F72BA0057C0C3 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F92F218F72BA0057C0C3 /* StyleGuide.swift */; };
+		B194F936218F75410057C0C3 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F934218F75410057C0C3 /* PostCollectionViewCell.swift */; };
+		B194F937218F75410057C0C3 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F935218F75410057C0C3 /* PostsViewController.swift */; };
+		B1EA1E76218F9AD100C953A0 /* Post+OMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA1E75218F9AD100C953A0 /* Post+OMP.swift */; };
+		B1EA1E7F218F9E0F00C953A0 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA1E7E218F9E0F00C953A0 /* PostViewModel.swift */; };
+		B1EA1E81218F9F0A00C953A0 /* PostViewModel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA1E80218F9F0A00C953A0 /* PostViewModel+Rx.swift */; };
 		BF0BD0CC36FD556C57D5E887 /* Pods_ohMyPost_ohMyPostBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E294C3020D0F98AD85395ACA /* Pods_ohMyPost_ohMyPostBase.framework */; };
 		E6CCF9A36FDB8D6ED3D84544 /* Pods_ohMyPost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D36A99039FE8A8451F6F15 /* Pods_ohMyPost.framework */; };
 /* End PBXBuildFile section */
@@ -93,13 +98,18 @@
 		B118F05C218F68A500E7DBB8 /* OMPRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMPRepository.swift; sourceTree = "<group>"; };
 		B118F05E218F6AE300E7DBB8 /* OMPRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMPRepositoryTest.swift; sourceTree = "<group>"; };
 		B118F060218F6BF600E7DBB8 /* PostModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTest.swift; sourceTree = "<group>"; };
-		B1270E0A218F6F5100322750 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		B12AAB07218F59F40061FE84 /* ohMyPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ohMyPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12AAB0A218F59F40061FE84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B12AAB11218F59F50061FE84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B12AAB14218F59F50061FE84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B12AAB16218F59F50061FE84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B12AAB1B218F59F50061FE84 /* ohMyPostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ohMyPostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B194F92F218F72BA0057C0C3 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
+		B194F934218F75410057C0C3 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		B194F935218F75410057C0C3 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		B1EA1E75218F9AD100C953A0 /* Post+OMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+OMP.swift"; sourceTree = "<group>"; };
+		B1EA1E7E218F9E0F00C953A0 /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		B1EA1E80218F9F0A00C953A0 /* PostViewModel+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostViewModel+Rx.swift"; sourceTree = "<group>"; };
 		DE27F42C9E70158C0D7CC46B /* Pods-ohMyPostTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ohMyPostTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ohMyPostTests/Pods-ohMyPostTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E294C3020D0F98AD85395ACA /* Pods_ohMyPost_ohMyPostBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ohMyPost_ohMyPostBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E725D0C9EBBDF838F48BB2F5 /* Pods-ohMyPost-ohMyPostBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ohMyPost-ohMyPostBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-ohMyPost-ohMyPostBase/Pods-ohMyPost-ohMyPostBase.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,7 +237,7 @@
 		B1270E09218F6F5100322750 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B1270E0A218F6F5100322750 /* PostsViewController.swift */,
+				B194F933218F75410057C0C3 /* Posts */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,10 +272,55 @@
 				B12AAB13218F59F50061FE84 /* LaunchScreen.storyboard */,
 				B12AAB16218F59F50061FE84 /* Info.plist */,
 				B118F020218F60E400E7DBB8 /* API */,
+				B1EA1E73218F9AD100C953A0 /* Extensions */,
 				B118F05B218F68A500E7DBB8 /* Repositories */,
 				B1270E09218F6F5100322750 /* Views */,
+				B1EA1E7C218F9E0F00C953A0 /* ViewModels */,
 			);
 			path = ohMyPost;
+			sourceTree = "<group>";
+		};
+		B194F933218F75410057C0C3 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				B194F935218F75410057C0C3 /* PostsViewController.swift */,
+				B194F934218F75410057C0C3 /* PostCollectionViewCell.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		B1EA1E73218F9AD100C953A0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B194F92F218F72BA0057C0C3 /* StyleGuide.swift */,
+				B1EA1E74218F9AD100C953A0 /* Entities */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B1EA1E74218F9AD100C953A0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA1E75218F9AD100C953A0 /* Post+OMP.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B1EA1E7C218F9E0F00C953A0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA1E7D218F9E0F00C953A0 /* Posts */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B1EA1E7D218F9E0F00C953A0 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA1E7E218F9E0F00C953A0 /* PostViewModel.swift */,
+				B1EA1E80218F9F0A00C953A0 /* PostViewModel+Rx.swift */,
+			);
+			path = Posts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -672,8 +727,13 @@
 			files = (
 				B118F022218F60E400E7DBB8 /* JSONPlaceholderAPI.swift in Sources */,
 				B118F05D218F68A500E7DBB8 /* OMPRepository.swift in Sources */,
+				B194F930218F72BA0057C0C3 /* StyleGuide.swift in Sources */,
+				B194F937218F75410057C0C3 /* PostsViewController.swift in Sources */,
 				B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */,
-				B1270E0B218F6F5100322750 /* PostsViewController.swift in Sources */,
+				B1EA1E7F218F9E0F00C953A0 /* PostViewModel.swift in Sources */,
+				B1EA1E76218F9AD100C953A0 /* Post+OMP.swift in Sources */,
+				B194F936218F75410057C0C3 /* PostCollectionViewCell.swift in Sources */,
+				B1EA1E81218F9F0A00C953A0 /* PostViewModel+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

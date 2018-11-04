@@ -20,9 +20,8 @@
 		B118F05D218F68A500E7DBB8 /* OMPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F05C218F68A500E7DBB8 /* OMPRepository.swift */; };
 		B118F05F218F6AE300E7DBB8 /* OMPRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F05E218F6AE300E7DBB8 /* OMPRepositoryTest.swift */; };
 		B118F061218F6BF600E7DBB8 /* PostModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F060218F6BF600E7DBB8 /* PostModelTest.swift */; };
+		B1270E0B218F6F5100322750 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1270E0A218F6F5100322750 /* PostsViewController.swift */; };
 		B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AAB0A218F59F40061FE84 /* AppDelegate.swift */; };
-		B12AAB0D218F59F40061FE84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AAB0C218F59F40061FE84 /* ViewController.swift */; };
-		B12AAB10218F59F40061FE84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12AAB0E218F59F40061FE84 /* Main.storyboard */; };
 		B12AAB12218F59F50061FE84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12AAB11218F59F50061FE84 /* Assets.xcassets */; };
 		B12AAB15218F59F50061FE84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12AAB13218F59F50061FE84 /* LaunchScreen.storyboard */; };
 		BF0BD0CC36FD556C57D5E887 /* Pods_ohMyPost_ohMyPostBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E294C3020D0F98AD85395ACA /* Pods_ohMyPost_ohMyPostBase.framework */; };
@@ -94,10 +93,9 @@
 		B118F05C218F68A500E7DBB8 /* OMPRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMPRepository.swift; sourceTree = "<group>"; };
 		B118F05E218F6AE300E7DBB8 /* OMPRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMPRepositoryTest.swift; sourceTree = "<group>"; };
 		B118F060218F6BF600E7DBB8 /* PostModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTest.swift; sourceTree = "<group>"; };
+		B1270E0A218F6F5100322750 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		B12AAB07218F59F40061FE84 /* ohMyPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ohMyPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12AAB0A218F59F40061FE84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B12AAB0C218F59F40061FE84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B12AAB0F218F59F40061FE84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B12AAB11218F59F50061FE84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B12AAB14218F59F50061FE84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B12AAB16218F59F50061FE84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -226,6 +224,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		B1270E09218F6F5100322750 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1270E0A218F6F5100322750 /* PostsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B12AAAFE218F59F40061FE84 = {
 			isa = PBXGroup;
 			children = (
@@ -252,13 +258,12 @@
 			isa = PBXGroup;
 			children = (
 				B12AAB0A218F59F40061FE84 /* AppDelegate.swift */,
-				B12AAB0C218F59F40061FE84 /* ViewController.swift */,
-				B12AAB0E218F59F40061FE84 /* Main.storyboard */,
 				B12AAB11218F59F50061FE84 /* Assets.xcassets */,
 				B12AAB13218F59F50061FE84 /* LaunchScreen.storyboard */,
 				B12AAB16218F59F50061FE84 /* Info.plist */,
 				B118F020218F60E400E7DBB8 /* API */,
 				B118F05B218F68A500E7DBB8 /* Repositories */,
+				B1270E09218F6F5100322750 /* Views */,
 			);
 			path = ohMyPost;
 			sourceTree = "<group>";
@@ -429,7 +434,6 @@
 			files = (
 				B12AAB15218F59F50061FE84 /* LaunchScreen.storyboard in Resources */,
 				B12AAB12218F59F50061FE84 /* Assets.xcassets in Resources */,
-				B12AAB10218F59F40061FE84 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,10 +670,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B12AAB0D218F59F40061FE84 /* ViewController.swift in Sources */,
 				B118F022218F60E400E7DBB8 /* JSONPlaceholderAPI.swift in Sources */,
 				B118F05D218F68A500E7DBB8 /* OMPRepository.swift in Sources */,
 				B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */,
+				B1270E0B218F6F5100322750 /* PostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,14 +711,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B12AAB0E218F59F40061FE84 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B12AAB0F218F59F40061FE84 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B12AAB13218F59F50061FE84 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

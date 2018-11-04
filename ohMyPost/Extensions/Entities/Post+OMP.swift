@@ -43,9 +43,7 @@ extension SectionOfPosts: AnimatableSectionModelType {
     }
     
     var identity: String {
-        return items.reduce("", { (acum, item) -> String in
-            return "\(acum)\(item.id)"
-        })
+        return self.header
     }
     
 }

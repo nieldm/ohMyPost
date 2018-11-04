@@ -14,6 +14,12 @@
 		B118F03A218F646700E7DBB8 /* ohMyPostBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B118F02A218F646700E7DBB8 /* ohMyPostBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B118F03D218F646700E7DBB8 /* ohMyPostBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B118F028218F646700E7DBB8 /* ohMyPostBase.framework */; };
 		B118F03E218F646700E7DBB8 /* ohMyPostBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B118F028218F646700E7DBB8 /* ohMyPostBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B118F04F218F665F00E7DBB8 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F04E218F665F00E7DBB8 /* PostAPI.swift */; };
+		B118F054218F66B300E7DBB8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F053218F66B300E7DBB8 /* Post.swift */; };
+		B118F056218F66C200E7DBB8 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F055218F66C200E7DBB8 /* PostModel.swift */; };
+		B118F05D218F68A500E7DBB8 /* OMPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F05C218F68A500E7DBB8 /* OMPRepository.swift */; };
+		B118F05F218F6AE300E7DBB8 /* OMPRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F05E218F6AE300E7DBB8 /* OMPRepositoryTest.swift */; };
+		B118F061218F6BF600E7DBB8 /* PostModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F060218F6BF600E7DBB8 /* PostModelTest.swift */; };
 		B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AAB0A218F59F40061FE84 /* AppDelegate.swift */; };
 		B12AAB0D218F59F40061FE84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AAB0C218F59F40061FE84 /* ViewController.swift */; };
 		B12AAB10218F59F40061FE84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12AAB0E218F59F40061FE84 /* Main.storyboard */; };
@@ -82,6 +88,12 @@
 		B118F02A218F646700E7DBB8 /* ohMyPostBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ohMyPostBase.h; sourceTree = "<group>"; };
 		B118F02B218F646700E7DBB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B118F030218F646700E7DBB8 /* ohMyPostBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ohMyPostBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B118F04E218F665F00E7DBB8 /* PostAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
+		B118F053218F66B300E7DBB8 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B118F055218F66C200E7DBB8 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		B118F05C218F68A500E7DBB8 /* OMPRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMPRepository.swift; sourceTree = "<group>"; };
+		B118F05E218F6AE300E7DBB8 /* OMPRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMPRepositoryTest.swift; sourceTree = "<group>"; };
+		B118F060218F6BF600E7DBB8 /* PostModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTest.swift; sourceTree = "<group>"; };
 		B12AAB07218F59F40061FE84 /* ohMyPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ohMyPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12AAB0A218F59F40061FE84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B12AAB0C218F59F40061FE84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,8 +185,45 @@
 			children = (
 				B118F02A218F646700E7DBB8 /* ohMyPostBase.h */,
 				B118F02B218F646700E7DBB8 /* Info.plist */,
+				B118F04D218F665F00E7DBB8 /* API */,
+				B118F052218F66B300E7DBB8 /* Entities */,
+				B118F048218F65BA00E7DBB8 /* Models */,
 			);
 			path = ohMyPostBase;
+			sourceTree = "<group>";
+		};
+		B118F048218F65BA00E7DBB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B118F055218F66C200E7DBB8 /* PostModel.swift */,
+				B118F060218F6BF600E7DBB8 /* PostModelTest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B118F04D218F665F00E7DBB8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B118F04E218F665F00E7DBB8 /* PostAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B118F052218F66B300E7DBB8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B118F053218F66B300E7DBB8 /* Post.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B118F05B218F68A500E7DBB8 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B118F05C218F68A500E7DBB8 /* OMPRepository.swift */,
+				B118F05E218F6AE300E7DBB8 /* OMPRepositoryTest.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		B12AAAFE218F59F40061FE84 = {
@@ -209,6 +258,7 @@
 				B12AAB13218F59F50061FE84 /* LaunchScreen.storyboard */,
 				B12AAB16218F59F50061FE84 /* Info.plist */,
 				B118F020218F60E400E7DBB8 /* API */,
+				B118F05B218F68A500E7DBB8 /* Repositories */,
 			);
 			path = ohMyPost;
 			sourceTree = "<group>";
@@ -320,9 +370,11 @@
 				TargetAttributes = {
 					B118F027218F646700E7DBB8 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					B118F02F218F646700E7DBB8 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = B12AAB06218F59F40061FE84;
 					};
 					B12AAB06218F59F40061FE84 = {
@@ -330,6 +382,7 @@
 					};
 					B12AAB1A218F59F50061FE84 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = B12AAB06218F59F40061FE84;
 					};
 				};
@@ -595,6 +648,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B118F04F218F665F00E7DBB8 /* PostAPI.swift in Sources */,
+				B118F056218F66C200E7DBB8 /* PostModel.swift in Sources */,
+				B118F054218F66B300E7DBB8 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B118F061218F6BF600E7DBB8 /* PostModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +668,7 @@
 			files = (
 				B12AAB0D218F59F40061FE84 /* ViewController.swift in Sources */,
 				B118F022218F60E400E7DBB8 /* JSONPlaceholderAPI.swift in Sources */,
+				B118F05D218F68A500E7DBB8 /* OMPRepository.swift in Sources */,
 				B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B118F05F218F6AE300E7DBB8 /* OMPRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +730,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5EC25DF43440E09C8CC3C25B /* Pods-ohMyPost-ohMyPostBase.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -689,6 +749,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nieldm.ohMyPostBase;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -700,6 +761,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E725D0C9EBBDF838F48BB2F5 /* Pods-ohMyPost-ohMyPostBase.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -730,6 +792,7 @@
 			baseConfigurationReference = 76037BA754DD97043A6B2B02 /* Pods-ohMyPostTests-ohMyPostBaseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VT5ZVS6ZZ;
 				INFOPLIST_FILE = ohMyPostBase/Info.plist;
@@ -740,6 +803,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nieldm.ohMyPostBaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ohMyPost.app/ohMyPost";
@@ -751,6 +815,7 @@
 			baseConfigurationReference = 7D0C9114A567E1151E8F9E0E /* Pods-ohMyPostTests-ohMyPostBaseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VT5ZVS6ZZ;
 				INFOPLIST_FILE = ohMyPostBase/Info.plist;
@@ -929,6 +994,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VT5ZVS6ZZ;
 				INFOPLIST_FILE = ohMyPost/Info.plist;
@@ -939,6 +1005,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nieldm.ohMyPostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ohMyPost.app/ohMyPost";
@@ -951,6 +1018,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VT5ZVS6ZZ;
 				INFOPLIST_FILE = ohMyPost/Info.plist;

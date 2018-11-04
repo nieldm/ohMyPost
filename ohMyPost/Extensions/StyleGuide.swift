@@ -37,11 +37,28 @@ extension UIColor {
 extension UIFont {
     
     class var OMPTitle: UIFont {
-        return UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        return UIFont.systemFont(ofSize: 14.0, weight: .semibold)
     }
     
     class var OMPSubTitle: UIFont {
-        return UIFont.systemFont(ofSize: 13.0, weight: .regular)
+        return UIFont.systemFont(ofSize: 12.0, weight: .regular)
+    }
+    
+}
+
+// Border and Shadow
+
+extension CALayer {
+    
+    func addBorderAndShadow() {
+        self.do {
+            $0.cornerRadius = 4
+            $0.shadowColor = UIColor.dusk.cgColor
+            $0.shadowOffset = CGSize(width: 0, height: 3.0)
+            $0.shadowRadius = 2.0
+            $0.shadowOpacity = 0.2
+            $0.masksToBounds = false
+        }
     }
     
 }

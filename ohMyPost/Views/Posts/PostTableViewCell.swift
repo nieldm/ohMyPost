@@ -11,8 +11,14 @@ class PostTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.backgroundColor = .lightGrayBG
+        
         self.contentView.do {
             $0.backgroundColor = .white
+            $0.snp.makeConstraints { make in
+                make.edges.equalToSuperview().inset(8)
+            }
+            $0.layer.cornerRadius = 4
         }
         
         self.iconImageView = UIImageView(frame: CGRect.zero).then {

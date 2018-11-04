@@ -45,7 +45,7 @@ class PostsViewController: UIViewController {
                 .disposed(by: self.disposeBag)
         }
         
-        self.tableView = UITableView(frame: .zero, style: .grouped).then {
+        self.tableView = UITableView(frame: .zero, style: .plain).then {
             self.view.addSubview($0)
             $0.snp.makeConstraints { make in
                 make.top.left.right.bottom.equalToSuperview()
@@ -54,6 +54,7 @@ class PostsViewController: UIViewController {
             $0.backgroundColor = .lightGrayBG
             $0.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
             $0.showsVerticalScrollIndicator = false
+            $0.separatorColor = .lightGrayBG
         }
     }
     

@@ -38,6 +38,11 @@ class PostsViewController: UIViewController {
         let _ = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: nil).then {
             $0.tintColor = .turquoiseBlue
             self.navigationItem.rightBarButtonItem = $0
+            $0.rx.tap
+                .subscribe(onNext: { [weak self] in
+                    self?.reloadPosts()
+                })
+                .disposed(by: self.disposeBag)
         }
         
         self.tableView = UITableView(frame: .zero, style: .grouped).then {
@@ -54,11 +59,7 @@ class PostsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.viewModel.rx.getPosts()
-            .subscribe(onNext: { [weak self] posts in
-                self?.data.value = posts
-            })
-            .disposed(by: self.disposeBag)
+        self.reloadPosts()
     }
     
     private func configureTableView() {
@@ -86,6 +87,13 @@ class PostsViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
+    private func reloadPosts() {
+        self.viewModel.rx.getPosts()
+            .subscribe(onNext: { [weak self] posts in
+                self?.data.value = posts
+            })
+            .disposed(by: self.disposeBag)
+    }
 }
 
 extension PostsViewController: UITableViewDelegate {

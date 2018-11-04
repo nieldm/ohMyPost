@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06BC0F5B5CCCA68270DB46D0 /* Pods_ohMyPostTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EC45B3D275805C5AF0C3F1 /* Pods_ohMyPostTests.framework */; };
+		B118F022218F60E400E7DBB8 /* JSONPlaceholderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118F021218F60E400E7DBB8 /* JSONPlaceholderAPI.swift */; };
 		B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AAB0A218F59F40061FE84 /* AppDelegate.swift */; };
 		B12AAB0D218F59F40061FE84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AAB0C218F59F40061FE84 /* ViewController.swift */; };
 		B12AAB10218F59F40061FE84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12AAB0E218F59F40061FE84 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		51017CC53069131F731EC8C3 /* Pods-ohMyPost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ohMyPost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ohMyPost/Pods-ohMyPost.debug.xcconfig"; sourceTree = "<group>"; };
 		7CF485BA521D0F9B28AE2B73 /* Pods-ohMyPost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ohMyPost.release.xcconfig"; path = "Pods/Target Support Files/Pods-ohMyPost/Pods-ohMyPost.release.xcconfig"; sourceTree = "<group>"; };
 		A0D36A99039FE8A8451F6F15 /* Pods_ohMyPost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ohMyPost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B118F021218F60E400E7DBB8 /* JSONPlaceholderAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPlaceholderAPI.swift; sourceTree = "<group>"; };
 		B12AAB07218F59F40061FE84 /* ohMyPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ohMyPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12AAB0A218F59F40061FE84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B12AAB0C218F59F40061FE84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B118F020218F60E400E7DBB8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B118F021218F60E400E7DBB8 /* JSONPlaceholderAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		B12AAAFE218F59F40061FE84 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 				B12AAB11218F59F50061FE84 /* Assets.xcassets */,
 				B12AAB13218F59F50061FE84 /* LaunchScreen.storyboard */,
 				B12AAB16218F59F50061FE84 /* Info.plist */,
+				B118F020218F60E400E7DBB8 /* API */,
 			);
 			path = ohMyPost;
 			sourceTree = "<group>";
@@ -261,7 +272,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ohMyPost/Pods-ohMyPost-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -277,7 +287,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -349,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B12AAB0D218F59F40061FE84 /* ViewController.swift in Sources */,
+				B118F022218F60E400E7DBB8 /* JSONPlaceholderAPI.swift in Sources */,
 				B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

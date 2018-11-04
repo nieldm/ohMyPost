@@ -4,12 +4,13 @@ import SnapKit
 import RxDataSources
 import ohMyPostBase
 import RxSwift
+import RxCocoa
 
 class PostsViewController: UIViewController {
 
     private let viewModel: PostViewModel
     private let disposeBag = DisposeBag()
-    fileprivate let data = Variable<[Post]>([])
+    fileprivate let data = BehaviorRelay<[Post]>(value: [])
     
     fileprivate var tableView: UITableView! {
         didSet {
@@ -83,7 +84,8 @@ class PostsViewController: UIViewController {
         
         self.tableView.rx.modelDeleted(Post.self)
             .subscribe { [weak self] event in
-                self?.data.value = self?.data.value.filter { event.element != $0 } ?? []
+                let result = self?.data.value.filter { event.element != $0 } ?? []
+                self?.data.accept(result)
             }
             .disposed(by: disposeBag)
     }
@@ -91,7 +93,7 @@ class PostsViewController: UIViewController {
     private func reloadPosts() {
         self.viewModel.rx.getPosts()
             .subscribe(onNext: { [weak self] posts in
-                self?.data.value = posts
+                self?.data.accept(posts)
             })
             .disposed(by: self.disposeBag)
     }

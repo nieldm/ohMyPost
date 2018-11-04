@@ -10,10 +10,16 @@ target 'ohMyPost' do
   pod 'SnapKit',           '~> 4.2'
   pod 'RxDataSources',     '~> 3.0'
 
+  target 'ohMyPostBase' do
+  end
+
   target 'ohMyPostTests' do
     inherit! :search_paths
     pod 'RxBlocking', '~> 4.0'
     pod 'RxTest',     '~> 4.0'
+
+    target 'ohMyPostBaseTests' do
+    end
   end
 
   inhibit_all_warnings!

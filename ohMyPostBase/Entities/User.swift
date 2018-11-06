@@ -1,9 +1,10 @@
 import Foundation
 
-struct User: Codable {
-    let id: Int
-    let username: String
-    let name: String
-    let phone: String
-    let website: String
+public struct User: Codable {
+    public let id: Int
+    public let username: String
+    public let name: String
+    public let phone: String
+    public let website: String
+    public let email: String
 }

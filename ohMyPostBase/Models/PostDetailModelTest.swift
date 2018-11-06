@@ -6,7 +6,10 @@ class PostDetailModelTest: XCTestCase {
     var sut: PostDetailModel!
     
     override func setUp() {
-        self.sut = PostDetailModel(api: MockedAPI(), postId: 1)
+        self.sut = PostDetailModel(
+            api: MockedAPI(),
+            post: Post(id: 0, userId: 0, title: "Test", body: "TestCase")
+        )
     }
 
     func testUser() {
@@ -26,7 +29,7 @@ class PostDetailModelTest: XCTestCase {
 class MockedAPI {}
 
 extension MockedAPI: PostDetailAPI {
-    func getUser(postId: Int, callback: (User?) -> ()) {
+    func getUser(userId: Int, callback: (User?) -> ()) {
         callback(User(id: 0, username: "nieldm", name: "Daniel Mendez", phone: "317000000", website: "nieldm.com"))
     }
     

@@ -1,20 +1,20 @@
 import Foundation
 
-class PostDetailModel {
+public class PostDetailModel {
     private let api: PostDetailAPI
-    private let postId: Int
+    public let post: Post
     
-    public init(api: PostDetailAPI, postId: Int) {
+    public init(api: PostDetailAPI, post: Post) {
         self.api = api
-        self.postId = postId
+        self.post = post
     }
     
-    func getUser(callback: @escaping (User?) -> ()) {
-        self.api.getUser(postId: self.postId, callback: callback)
+    public func getUser(callback: @escaping (User?) -> ()) {
+        self.api.getUser(userId: self.post.userId, callback: callback)
     }
     
-    func getComment(callback: @escaping ([Comment]) -> ()) {
-        self.api.getComment(postId: self.postId, callback: callback)
+    public func getComment(callback: @escaping ([Comment]) -> ()) {
+        self.api.getComment(postId: self.post.id, callback: callback)
     }
     
 }

@@ -88,6 +88,16 @@ class PostsViewController: UIViewController {
                 self?.data.accept(result)
             }
             .disposed(by: disposeBag)
+
+        self.tableView.rx.modelSelected(Post.self)
+            .asDriver()
+            .drive(onNext: { [weak self] post in
+                let model = PostDetailModel(api: OMPRepository(), post: post)
+                let viewModel = PostDetailViewModel(model: model)
+                let viewController = PostDetailViewController(viewModel: viewModel)
+                self?.navigationController?.pushViewController(viewController, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func reloadPosts() {

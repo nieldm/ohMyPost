@@ -36,6 +36,10 @@ extension UIColor {
 
 extension UIFont {
     
+    class var OMPHeader: UIFont {
+        return UIFont.systemFont(ofSize: 18.0, weight: .bold)
+    }
+    
     class var OMPTitle: UIFont {
         return UIFont.systemFont(ofSize: 14.0, weight: .semibold)
     }

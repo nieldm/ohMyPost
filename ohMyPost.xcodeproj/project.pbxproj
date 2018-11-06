@@ -29,6 +29,17 @@
 		B169B9182192241200D8FC91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B9172192241200D8FC91 /* User.swift */; };
 		B169B91A219224BA00D8FC91 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B919219224BA00D8FC91 /* Comment.swift */; };
 		B169B91C219226DB00D8FC91 /* PostDetailModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B91B219226DB00D8FC91 /* PostDetailModelTest.swift */; };
+		B169B91E219229C200D8FC91 /* OMPRepository+PostDetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B91D219229C200D8FC91 /* OMPRepository+PostDetailAPI.swift */; };
+		B169B92021922CCA00D8FC91 /* PostDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B91F21922CCA00D8FC91 /* PostDetailSection.swift */; };
+		B169B92221922D6100D8FC91 /* SectionOfPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B92121922D6100D8FC91 /* SectionOfPosts.swift */; };
+		B169B92421922F1200D8FC91 /* SectionOfPostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B92321922F1200D8FC91 /* SectionOfPostDetail.swift */; };
+		B169B926219230C600D8FC91 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B925219230C600D8FC91 /* PostDetailView.swift */; };
+		B169B92B219232B700D8FC91 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B92A219232B700D8FC91 /* PostDetailViewModel.swift */; };
+		B169B92D219232FB00D8FC91 /* PostDetailViewModel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B92C219232FB00D8FC91 /* PostDetailViewModel+Rx.swift */; };
+		B169B92F2192341B00D8FC91 /* PostDetailDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B92E2192341B00D8FC91 /* PostDetailDescriptionTableViewCell.swift */; };
+		B169B9312192342800D8FC91 /* PostDetailUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B9302192342800D8FC91 /* PostDetailUserTableViewCell.swift */; };
+		B169B9332192344000D8FC91 /* PostDetailCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B9322192344000D8FC91 /* PostDetailCommentTableViewCell.swift */; };
+		B169B9392192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B9382192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift */; };
 		B194F930218F72BA0057C0C3 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F92F218F72BA0057C0C3 /* StyleGuide.swift */; };
 		B194F936218F75410057C0C3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F934218F75410057C0C3 /* PostTableViewCell.swift */; };
 		B194F937218F75410057C0C3 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F935218F75410057C0C3 /* PostsViewController.swift */; };
@@ -116,6 +127,17 @@
 		B169B9172192241200D8FC91 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B169B919219224BA00D8FC91 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		B169B91B219226DB00D8FC91 /* PostDetailModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModelTest.swift; sourceTree = "<group>"; };
+		B169B91D219229C200D8FC91 /* OMPRepository+PostDetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OMPRepository+PostDetailAPI.swift"; sourceTree = "<group>"; };
+		B169B91F21922CCA00D8FC91 /* PostDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailSection.swift; sourceTree = "<group>"; };
+		B169B92121922D6100D8FC91 /* SectionOfPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfPosts.swift; sourceTree = "<group>"; };
+		B169B92321922F1200D8FC91 /* SectionOfPostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfPostDetail.swift; sourceTree = "<group>"; };
+		B169B925219230C600D8FC91 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		B169B92A219232B700D8FC91 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
+		B169B92C219232FB00D8FC91 /* PostDetailViewModel+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDetailViewModel+Rx.swift"; sourceTree = "<group>"; };
+		B169B92E2192341B00D8FC91 /* PostDetailDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		B169B9302192342800D8FC91 /* PostDetailUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailUserTableViewCell.swift; sourceTree = "<group>"; };
+		B169B9322192344000D8FC91 /* PostDetailCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCommentTableViewCell.swift; sourceTree = "<group>"; };
+		B169B9382192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCommentDetailTableViewCell.swift; sourceTree = "<group>"; };
 		B194F92F218F72BA0057C0C3 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		B194F934218F75410057C0C3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		B194F935218F75410057C0C3 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				B118F05C218F68A500E7DBB8 /* OMPRepository.swift */,
+				B169B91D219229C200D8FC91 /* OMPRepository+PostDetailAPI.swift */,
 				B118F05E218F6AE300E7DBB8 /* OMPRepositoryTest.swift */,
 			);
 			path = Repositories;
@@ -301,7 +324,23 @@
 		B169B9102192233600D8FC91 /* PostDetail */ = {
 			isa = PBXGroup;
 			children = (
+				B169B92321922F1200D8FC91 /* SectionOfPostDetail.swift */,
+				B169B91F21922CCA00D8FC91 /* PostDetailSection.swift */,
 				B169B9112192233600D8FC91 /* PostDetailViewController.swift */,
+				B169B925219230C600D8FC91 /* PostDetailView.swift */,
+				B169B92E2192341B00D8FC91 /* PostDetailDescriptionTableViewCell.swift */,
+				B169B9302192342800D8FC91 /* PostDetailUserTableViewCell.swift */,
+				B169B9322192344000D8FC91 /* PostDetailCommentTableViewCell.swift */,
+				B169B9382192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		B169B929219232B700D8FC91 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B169B92A219232B700D8FC91 /* PostDetailViewModel.swift */,
+				B169B92C219232FB00D8FC91 /* PostDetailViewModel+Rx.swift */,
 			);
 			path = PostDetail;
 			sourceTree = "<group>";
@@ -309,6 +348,7 @@
 		B194F933218F75410057C0C3 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				B169B92121922D6100D8FC91 /* SectionOfPosts.swift */,
 				B194F935218F75410057C0C3 /* PostsViewController.swift */,
 				B194F934218F75410057C0C3 /* PostTableViewCell.swift */,
 			);
@@ -335,6 +375,7 @@
 		B1EA1E7C218F9E0F00C953A0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B169B929219232B700D8FC91 /* PostDetail */,
 				B1EA1E7D218F9E0F00C953A0 /* Posts */,
 			);
 			path = ViewModels;
@@ -755,12 +796,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B169B92B219232B700D8FC91 /* PostDetailViewModel.swift in Sources */,
 				B118F022218F60E400E7DBB8 /* JSONPlaceholderAPI.swift in Sources */,
+				B169B9312192342800D8FC91 /* PostDetailUserTableViewCell.swift in Sources */,
 				B118F05D218F68A500E7DBB8 /* OMPRepository.swift in Sources */,
+				B169B92D219232FB00D8FC91 /* PostDetailViewModel+Rx.swift in Sources */,
 				B194F930218F72BA0057C0C3 /* StyleGuide.swift in Sources */,
+				B169B91E219229C200D8FC91 /* OMPRepository+PostDetailAPI.swift in Sources */,
+				B169B92021922CCA00D8FC91 /* PostDetailSection.swift in Sources */,
+				B169B92421922F1200D8FC91 /* SectionOfPostDetail.swift in Sources */,
+				B169B9392192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift in Sources */,
+				B169B926219230C600D8FC91 /* PostDetailView.swift in Sources */,
+				B169B92F2192341B00D8FC91 /* PostDetailDescriptionTableViewCell.swift in Sources */,
 				B169B9122192233600D8FC91 /* PostDetailViewController.swift in Sources */,
 				B194F937218F75410057C0C3 /* PostsViewController.swift in Sources */,
 				B12AAB0B218F59F40061FE84 /* AppDelegate.swift in Sources */,
+				B169B9332192344000D8FC91 /* PostDetailCommentTableViewCell.swift in Sources */,
+				B169B92221922D6100D8FC91 /* SectionOfPosts.swift in Sources */,
 				B1EA1E7F218F9E0F00C953A0 /* PostViewModel.swift in Sources */,
 				B1EA1E76218F9AD100C953A0 /* Post+OMP.swift in Sources */,
 				B194F936218F75410057C0C3 /* PostTableViewCell.swift in Sources */,

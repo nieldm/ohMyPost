@@ -1,30 +1,22 @@
-//
-//  PostDetailViewController.swift
-//  ohMyPost
-//
-//  Created by Daniel Mendez on 11/6/18.
-//  Copyright © 2018 nieldm. All rights reserved.
-//
-
 import UIKit
 
 class PostDetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+ 
+    let viewModel: PostDetailViewModel
+    
+    init(viewModel: PostDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    override func loadView() {
+        self.view = PostDetailView().then {
+            $0.render(withModel: self.viewModel)
+        }
+    }
 
 }

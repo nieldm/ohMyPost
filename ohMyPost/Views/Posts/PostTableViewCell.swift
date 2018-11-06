@@ -1,5 +1,6 @@
 import UIKit
 import ohMyPostBase
+import CoreData
 
 class PostTableViewCell: UITableViewCell {
     static let identifier = "PostCollectionViewCell"
@@ -29,6 +30,7 @@ class PostTableViewCell: UITableViewCell {
                 make.left.equalToSuperview().offset(8)
             }
             $0.backgroundColor = .blue
+            $0.isHidden = true
         }
         
         self.titleLabel = UILabel(frame: CGRect.zero).then {
@@ -59,13 +61,31 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
-    func set(data: Post) {
+    func set(data: Post, context: NSManagedObjectContext) {
         self.titleLabel.text = data.title.capitalized
         self.subTitleLabel.text = data.body
-        self.iconImageView.isHidden = !data.unread()
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let request = NSFetchRequest<PostItem>(entityName: "PostItem")
+            request.predicate = NSPredicate(format: "postId == %i", data.id)
+            
+            let items = try? context.fetch(request)
+            if let item = items?.first {
+                DispatchQueue.main.async {
+                    self.iconImageView.isHidden = item.read
+                }
+                return
+            } else {
+                DispatchQueue.main.async {
+                    self.iconImageView.isHidden = false
+                }
+            }
+        }
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {}
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        self.iconImageView.isHidden = true
+    }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {}
     

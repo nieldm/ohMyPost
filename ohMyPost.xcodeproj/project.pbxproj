@@ -40,6 +40,11 @@
 		B169B9312192342800D8FC91 /* PostDetailUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B9302192342800D8FC91 /* PostDetailUserTableViewCell.swift */; };
 		B169B9332192344000D8FC91 /* PostDetailCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B9322192344000D8FC91 /* PostDetailCommentTableViewCell.swift */; };
 		B169B9392192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B9382192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift */; };
+		B169B94021924B5100D8FC91 /* Posts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B169B93E21924B5100D8FC91 /* Posts.xcdatamodeld */; };
+		B169B94521924C9300D8FC91 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B94421924C9300D8FC91 /* PostItem.swift */; };
+		B169B94721924D0F00D8FC91 /* PostsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B94621924D0F00D8FC91 /* PostsContainer.swift */; };
+		B169B949219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B948219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift */; };
+		B169B94B2192513900D8FC91 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B94A2192513900D8FC91 /* Managed.swift */; };
 		B194F930218F72BA0057C0C3 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F92F218F72BA0057C0C3 /* StyleGuide.swift */; };
 		B194F936218F75410057C0C3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F934218F75410057C0C3 /* PostTableViewCell.swift */; };
 		B194F937218F75410057C0C3 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F935218F75410057C0C3 /* PostsViewController.swift */; };
@@ -138,6 +143,11 @@
 		B169B9302192342800D8FC91 /* PostDetailUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailUserTableViewCell.swift; sourceTree = "<group>"; };
 		B169B9322192344000D8FC91 /* PostDetailCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCommentTableViewCell.swift; sourceTree = "<group>"; };
 		B169B9382192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCommentDetailTableViewCell.swift; sourceTree = "<group>"; };
+		B169B93F21924B5100D8FC91 /* Posts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Posts.xcdatamodel; sourceTree = "<group>"; };
+		B169B94421924C9300D8FC91 /* PostItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+		B169B94621924D0F00D8FC91 /* PostsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsContainer.swift; sourceTree = "<group>"; };
+		B169B948219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		B169B94A2192513900D8FC91 /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		B194F92F218F72BA0057C0C3 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		B194F934218F75410057C0C3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		B194F935218F75410057C0C3 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +324,7 @@
 				B12AAB16218F59F50061FE84 /* Info.plist */,
 				B118F020218F60E400E7DBB8 /* API */,
 				B1EA1E73218F9AD100C953A0 /* Extensions */,
+				B169B93D21924B5100D8FC91 /* Persistence */,
 				B118F05B218F68A500E7DBB8 /* Repositories */,
 				B1270E09218F6F5100322750 /* Views */,
 				B1EA1E7C218F9E0F00C953A0 /* ViewModels */,
@@ -345,6 +356,24 @@
 			path = PostDetail;
 			sourceTree = "<group>";
 		};
+		B169B93D21924B5100D8FC91 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				B169B94621924D0F00D8FC91 /* PostsContainer.swift */,
+				B169B93E21924B5100D8FC91 /* Posts.xcdatamodeld */,
+				B169B94321924C9300D8FC91 /* Entities */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		B169B94321924C9300D8FC91 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B169B94421924C9300D8FC91 /* PostItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		B194F933218F75410057C0C3 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +388,8 @@
 			isa = PBXGroup;
 			children = (
 				B194F92F218F72BA0057C0C3 /* StyleGuide.swift */,
+				B169B94A2192513900D8FC91 /* Managed.swift */,
+				B169B948219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift */,
 				B1EA1E74218F9AD100C953A0 /* Entities */,
 			);
 			path = Extensions;
@@ -800,11 +831,16 @@
 				B118F022218F60E400E7DBB8 /* JSONPlaceholderAPI.swift in Sources */,
 				B169B9312192342800D8FC91 /* PostDetailUserTableViewCell.swift in Sources */,
 				B118F05D218F68A500E7DBB8 /* OMPRepository.swift in Sources */,
+				B169B949219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				B169B92D219232FB00D8FC91 /* PostDetailViewModel+Rx.swift in Sources */,
 				B194F930218F72BA0057C0C3 /* StyleGuide.swift in Sources */,
+				B169B94521924C9300D8FC91 /* PostItem.swift in Sources */,
 				B169B91E219229C200D8FC91 /* OMPRepository+PostDetailAPI.swift in Sources */,
 				B169B92021922CCA00D8FC91 /* PostDetailSection.swift in Sources */,
+				B169B94021924B5100D8FC91 /* Posts.xcdatamodeld in Sources */,
 				B169B92421922F1200D8FC91 /* SectionOfPostDetail.swift in Sources */,
+				B169B94721924D0F00D8FC91 /* PostsContainer.swift in Sources */,
+				B169B94B2192513900D8FC91 /* Managed.swift in Sources */,
 				B169B9392192468500D8FC91 /* PostDetailCommentDetailTableViewCell.swift in Sources */,
 				B169B926219230C600D8FC91 /* PostDetailView.swift in Sources */,
 				B169B92F2192341B00D8FC91 /* PostDetailDescriptionTableViewCell.swift in Sources */,
@@ -1224,6 +1260,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B169B93E21924B5100D8FC91 /* Posts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B169B93F21924B5100D8FC91 /* Posts.xcdatamodel */,
+			);
+			currentVersion = B169B93F21924B5100D8FC91 /* Posts.xcdatamodel */;
+			path = Posts.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B12AAAFF218F59F40061FE84 /* Project object */;
 }

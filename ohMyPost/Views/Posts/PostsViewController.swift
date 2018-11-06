@@ -5,6 +5,7 @@ import RxDataSources
 import ohMyPostBase
 import RxSwift
 import RxCocoa
+import CoreData
 
 class PostsViewController: UIViewController {
 
@@ -18,9 +19,12 @@ class PostsViewController: UIViewController {
         }
     }
     
-    init() {
+    init(managedObjectContext: NSManagedObjectContext) {
         let model = PostModel(api: OMPRepository())
-        self.viewModel = PostViewModel(model: model)
+        self.viewModel = PostViewModel(
+            model: model,
+            managedObjectContext: managedObjectContext
+        )
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -70,7 +74,7 @@ class PostsViewController: UIViewController {
                 return UITableViewCell(frame: .zero)
             }
             return cell.then {
-                $0.set(data: item)
+                $0.set(data: item, context: self.viewModel.context)
             }
         })
         dataSource.canEditRowAtIndexPath = { _, _ in true }
@@ -92,6 +96,7 @@ class PostsViewController: UIViewController {
         self.tableView.rx.modelSelected(Post.self)
             .asDriver()
             .drive(onNext: { [weak self] post in
+                self?.viewModel.markAsRead(post: post)
                 let model = PostDetailModel(api: OMPRepository(), post: post)
                 let viewModel = PostDetailViewModel(model: model)
                 let viewController = PostDetailViewController(viewModel: viewModel)

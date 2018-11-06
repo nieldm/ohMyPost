@@ -15,11 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let vc = PostsViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = nav
-        self.window?.makeKeyAndVisible()
+        createContainer { (container) in
+            let vc = PostsViewController(managedObjectContext: container.viewContext)
+            let nav = UINavigationController(rootViewController: vc)
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = nav
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
 

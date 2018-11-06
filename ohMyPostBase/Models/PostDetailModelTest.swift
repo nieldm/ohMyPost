@@ -1,0 +1,36 @@
+import XCTest
+@testable import ohMyPostBase
+
+class PostDetailModelTest: XCTestCase {
+
+    var sut: PostDetailModel!
+    
+    override func setUp() {
+        self.sut = PostDetailModel(api: MockedAPI(), postId: 1)
+    }
+
+    func testUser() {
+        self.sut.getUser { user in
+            XCTAssertEqual(user?.name, "Daniel Mendez")
+        }
+    }
+    
+    func testComment() {
+        self.sut.getComment { comments in
+            XCTAssertEqual(comments.first?.email, "nieldm@gmail.com")
+        }
+    }
+
+}
+
+class MockedAPI {}
+
+extension MockedAPI: PostDetailAPI {
+    func getUser(postId: Int, callback: (User?) -> ()) {
+        callback(User(id: 0, username: "nieldm", name: "Daniel Mendez", phone: "317000000", website: "nieldm.com"))
+    }
+    
+    func getComment(postId: Int, callback: @escaping ([Comment]) -> ()) {
+        callback([Comment(id: 0, name: "nieldm", email: "nieldm@gmail.com", body: "Hello World")])
+    }
+}

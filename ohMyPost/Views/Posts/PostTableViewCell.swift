@@ -8,6 +8,7 @@ class PostTableViewCell: UITableViewCell {
     private var titleLabel: UILabel!
     private var subTitleLabel: UILabel!
     private var iconImageView: UIImageView!
+    private lazy var favoriteImageView = UIImageView(frame: CGRect.zero)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,13 +34,24 @@ class PostTableViewCell: UITableViewCell {
             $0.isHidden = true
         }
         
+        self.favoriteImageView.do {
+            self.contentView.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.size.equalTo(32)
+                make.centerY.equalToSuperview()
+                make.right.equalToSuperview().inset(8)
+            }
+            $0.backgroundColor = .yellow
+            $0.isHidden = false
+        }
+        
         self.titleLabel = UILabel(frame: CGRect.zero).then {
             self.contentView.addSubview($0)
             $0.snp.makeConstraints { make in
                 make.top.equalToSuperview().offset(8)
                 make.bottom.equalTo(self.contentView.snp.centerY)
                 make.left.equalTo(self.iconImageView.snp.right).offset(8)
-                make.right.equalToSuperview().inset(8)
+                make.right.equalTo(self.favoriteImageView.snp.left).offset(-8)
             }
             $0.numberOfLines = 2
             $0.text = "Title"
@@ -52,7 +64,7 @@ class PostTableViewCell: UITableViewCell {
             $0.snp.makeConstraints { make in
                 make.top.equalTo(self.contentView.snp.centerY)
                 make.left.equalTo(self.iconImageView.snp.right).offset(8)
-                make.right.equalToSuperview().inset(8)
+                make.right.equalTo(self.favoriteImageView.snp.left).offset(-8)
             }
             $0.numberOfLines = 2
             $0.text = "SubTitle"
@@ -73,11 +85,13 @@ class PostTableViewCell: UITableViewCell {
             if let item = items?.first {
                 DispatchQueue.main.async {
                     self.iconImageView.isHidden = item.read
+                    self.favoriteImageView.isHidden = !item.favorite
                 }
                 return
             } else {
                 DispatchQueue.main.async {
                     self.iconImageView.isHidden = false
+                    self.favoriteImageView.isHidden = true
                 }
             }
         }

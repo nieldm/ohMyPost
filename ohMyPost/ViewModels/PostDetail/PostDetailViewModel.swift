@@ -52,7 +52,7 @@ class PostDetailViewModel {
             .disposed(by: self.disposeBag)
     }
     
-    func markAsFavorite() {
+    func markAsFavorite(callback: @escaping (Bool) -> ()) {
         let request = NSFetchRequest<PostItem>(entityName: "PostItem")
         request.predicate = NSPredicate(format: "postId == %i", model.post.id)
         
@@ -60,11 +60,23 @@ class PostDetailViewModel {
         if let item = items?.first {
             self.context.performChanges {
                 item.toogleFavorite()
+                callback(item.favorite)
             }
             return
         }
         self.context.performChanges {
             let _ = PostItem.insert(into: self.context, post: self.model.post, favorite: true)
+        }
+        callback(true)
+    }
+    
+    func getFavoritedState(callback: @escaping (Bool) -> ()) {
+        let request = NSFetchRequest<PostItem>(entityName: "PostItem")
+        request.predicate = NSPredicate(format: "postId == %i", model.post.id)
+        
+        let items = try? context.fetch(request)
+        if let item = items?.first {
+            callback(item.favorite)
         }
     }
 }

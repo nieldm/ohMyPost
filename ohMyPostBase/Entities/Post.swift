@@ -5,6 +5,8 @@ public struct Post: Codable {
     public let userId: Int
     public let title: String
     public let body: String
+    public let favorited = false
+    public let read = false
 }
 
 extension Post: Equatable {

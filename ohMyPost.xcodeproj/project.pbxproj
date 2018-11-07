@@ -48,7 +48,6 @@
 		B194F930218F72BA0057C0C3 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F92F218F72BA0057C0C3 /* StyleGuide.swift */; };
 		B194F936218F75410057C0C3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F934218F75410057C0C3 /* PostTableViewCell.swift */; };
 		B194F937218F75410057C0C3 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F935218F75410057C0C3 /* PostsViewController.swift */; };
-		B1EA1E76218F9AD100C953A0 /* Post+OMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA1E75218F9AD100C953A0 /* Post+OMP.swift */; };
 		B1EA1E7F218F9E0F00C953A0 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA1E7E218F9E0F00C953A0 /* PostViewModel.swift */; };
 		B1EA1E81218F9F0A00C953A0 /* PostViewModel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA1E80218F9F0A00C953A0 /* PostViewModel+Rx.swift */; };
 		BF0BD0CC36FD556C57D5E887 /* Pods_ohMyPost_ohMyPostBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E294C3020D0F98AD85395ACA /* Pods_ohMyPost_ohMyPostBase.framework */; };
@@ -151,7 +150,6 @@
 		B194F92F218F72BA0057C0C3 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		B194F934218F75410057C0C3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		B194F935218F75410057C0C3 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
-		B1EA1E75218F9AD100C953A0 /* Post+OMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+OMP.swift"; sourceTree = "<group>"; };
 		B1EA1E7E218F9E0F00C953A0 /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		B1EA1E80218F9F0A00C953A0 /* PostViewModel+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostViewModel+Rx.swift"; sourceTree = "<group>"; };
 		DE27F42C9E70158C0D7CC46B /* Pods-ohMyPostTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ohMyPostTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ohMyPostTests/Pods-ohMyPostTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -390,17 +388,8 @@
 				B194F92F218F72BA0057C0C3 /* StyleGuide.swift */,
 				B169B94A2192513900D8FC91 /* Managed.swift */,
 				B169B948219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift */,
-				B1EA1E74218F9AD100C953A0 /* Entities */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B1EA1E74218F9AD100C953A0 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				B1EA1E75218F9AD100C953A0 /* Post+OMP.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		B1EA1E7C218F9E0F00C953A0 /* ViewModels */ = {
@@ -850,7 +839,6 @@
 				B169B9332192344000D8FC91 /* PostDetailCommentTableViewCell.swift in Sources */,
 				B169B92221922D6100D8FC91 /* SectionOfPosts.swift in Sources */,
 				B1EA1E7F218F9E0F00C953A0 /* PostViewModel.swift in Sources */,
-				B1EA1E76218F9AD100C953A0 /* Post+OMP.swift in Sources */,
 				B194F936218F75410057C0C3 /* PostTableViewCell.swift in Sources */,
 				B1EA1E81218F9F0A00C953A0 /* PostViewModel+Rx.swift in Sources */,
 			);

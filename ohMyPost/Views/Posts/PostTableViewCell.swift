@@ -26,22 +26,22 @@ class PostTableViewCell: UITableViewCell {
         self.iconImageView = UIImageView(frame: CGRect.zero).then {
             self.contentView.addSubview($0)
             $0.snp.makeConstraints { make in
-                make.size.equalTo(32)
+                make.size.equalTo(8)
                 make.centerY.equalToSuperview()
-                make.left.equalToSuperview().offset(8)
+                make.left.equalToSuperview().offset(16)
             }
-            $0.backgroundColor = .blue
+            $0.image = UIImage(named: "unread")
             $0.isHidden = true
         }
         
         self.favoriteImageView.do {
             self.contentView.addSubview($0)
             $0.snp.makeConstraints { make in
-                make.size.equalTo(32)
+                make.size.equalTo(24)
                 make.centerY.equalToSuperview()
-                make.right.equalToSuperview().inset(8)
+                make.right.equalToSuperview().inset(16)
             }
-            $0.backgroundColor = .yellow
+            $0.image = UIImage(named: "star-selected")
             $0.isHidden = false
         }
         
@@ -50,7 +50,7 @@ class PostTableViewCell: UITableViewCell {
             $0.snp.makeConstraints { make in
                 make.top.equalToSuperview().offset(8)
                 make.bottom.equalTo(self.contentView.snp.centerY)
-                make.left.equalTo(self.iconImageView.snp.right).offset(8)
+                make.left.equalTo(self.iconImageView.snp.right).offset(16)
                 make.right.equalTo(self.favoriteImageView.snp.left).offset(-8)
             }
             $0.numberOfLines = 2
@@ -63,7 +63,7 @@ class PostTableViewCell: UITableViewCell {
             self.contentView.addSubview($0)
             $0.snp.makeConstraints { make in
                 make.top.equalTo(self.contentView.snp.centerY)
-                make.left.equalTo(self.iconImageView.snp.right).offset(8)
+                make.left.equalTo(self.iconImageView.snp.right).offset(16)
                 make.right.equalTo(self.favoriteImageView.snp.left).offset(-8)
             }
             $0.numberOfLines = 2

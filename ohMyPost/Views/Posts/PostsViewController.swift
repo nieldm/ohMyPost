@@ -17,6 +17,8 @@ class PostsViewController: UIViewController {
     private let disposeBag = DisposeBag()
     fileprivate let data = BehaviorRelay<[Post]>(value: [])
     private lazy var segmentController = UISegmentedControl(frame: .zero)
+    private lazy var deleteAllButton = UIButton(frame: .zero)
+    private lazy var noResults = UILabel(frame: .zero)
     
     fileprivate var tableView: UITableView! {
         didSet {
@@ -73,17 +75,53 @@ class PostsViewController: UIViewController {
                 .disposed(by: self.disposeBag)
         }
         
+        self.deleteAllButton.do {
+            self.view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.bottom.equalTo(self.view.snp.bottomMargin)
+                make.left.right.equalToSuperview()
+                make.height.equalTo(44)
+            }
+            $0.setTitle("Delete All", for: .normal)
+            $0.setTitleColor(.red, for: .normal)
+            $0.rx.tap
+                .map { _ -> [Post] in
+                    return []
+                }
+                .bind(to: self.data)
+                .disposed(by: self.disposeBag)
+        }
+        
         self.tableView = UITableView(frame: .zero, style: .plain).then {
             self.view.addSubview($0)
             $0.snp.makeConstraints { make in
                 make.top.equalTo(self.segmentController.snp.bottom).offset(8)
-                make.left.right.bottom.equalToSuperview()
+                make.left.right.equalToSuperview()
+                make.bottom.equalTo(self.deleteAllButton.snp.top)
             }
             $0.rowHeight = 120
             $0.backgroundColor = .lightGrayBG
             $0.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
             $0.showsVerticalScrollIndicator = false
             $0.separatorColor = .lightGrayBG
+        }
+        
+        self.noResults.do {
+            self.view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.left.equalToSuperview().offset(16)
+                make.right.equalToSuperview().inset(16)
+                make.centerY.equalTo(self.tableView)
+            }
+            $0.font = UIFont.OMPHeader
+            $0.numberOfLines = 3
+            $0.text = "Bummer!\nNo post here\n😭"
+            $0.textColor = .dusk
+            $0.textAlignment = .center
+            $0.isHidden = true
+            self.data.map { $0.count > 0 }
+                .bind(to: $0.rx.isHidden)
+                .disposed(by: self.disposeBag)
         }
     }
     

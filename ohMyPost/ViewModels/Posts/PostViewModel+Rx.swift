@@ -16,4 +16,24 @@ extension Reactive where Base == PostViewModel {
         }
     }
     
+    func getFiltered() -> Observable<[Post]> {
+        return Observable.create { observer in
+            self.base.getFavoritePosts { ids in
+                self.base.model.loadPosts(callback: { (posts) in
+                    let favoritedPost = posts.filter { ids.contains($0.id) }
+                    observer.onNext(favoritedPost)
+                    observer.onCompleted()
+                })
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func getBySegment(segment: PostSegmentValue) -> Observable<[Post]> {
+        switch segment {
+        case .all: return self.getPosts()
+        case .favorite: return self.getFiltered()
+        }
+    }
+    
 }

@@ -7,11 +7,16 @@ import RxSwift
 import RxCocoa
 import CoreData
 
+enum PostSegmentValue: Int {
+    case all = 0, favorite
+}
+
 class PostsViewController: UIViewController {
 
     private let viewModel: PostViewModel
     private let disposeBag = DisposeBag()
     fileprivate let data = BehaviorRelay<[Post]>(value: [])
+    private lazy var segmentController = UISegmentedControl(frame: .zero)
     
     fileprivate var tableView: UITableView! {
         didSet {
@@ -44,16 +49,35 @@ class PostsViewController: UIViewController {
             $0.tintColor = .turquoiseBlue
             self.navigationItem.rightBarButtonItem = $0
             $0.rx.tap
-                .subscribe(onNext: { [weak self] in
+                .asDriver()
+                .drive(onNext: { [weak self] in
                     self?.reloadPosts()
                 })
+                .disposed(by: self.disposeBag)
+        }
+        
+        self.segmentController.do {
+            self.view.addSubview($0)
+            $0.snp.makeConstraints { make in
+                make.top.equalTo(self.view.snp.topMargin).offset(16)
+                make.left.right.equalToSuperview().inset(8)
+            }
+            $0.insertSegment(withTitle: "All", at: PostSegmentValue.all.rawValue, animated: false)
+            $0.insertSegment(withTitle: "Favorite", at: PostSegmentValue.favorite.rawValue, animated: false)
+            $0.selectedSegmentIndex = 0
+            $0.tintColor = .turquoiseBlue
+            $0.rx.controlEvent(UIControlEvents.valueChanged)
+                .map { _ in PostSegmentValue.init(rawValue: self.segmentController.selectedSegmentIndex)! }
+                .flatMap { self.viewModel.rx.getBySegment(segment: $0) }
+                .bind(to: self.data)
                 .disposed(by: self.disposeBag)
         }
         
         self.tableView = UITableView(frame: .zero, style: .plain).then {
             self.view.addSubview($0)
             $0.snp.makeConstraints { make in
-                make.top.left.right.bottom.equalToSuperview()
+                make.top.equalTo(self.segmentController.snp.bottom).offset(8)
+                make.left.right.bottom.equalToSuperview()
             }
             $0.rowHeight = 120
             $0.backgroundColor = .lightGrayBG
@@ -110,7 +134,10 @@ class PostsViewController: UIViewController {
     }
 
     private func reloadPosts() {
-        self.viewModel.rx.getPosts()
+        guard let segment = PostSegmentValue(rawValue: self.segmentController.selectedSegmentIndex) else {
+            return
+        }
+        self.viewModel.rx.getBySegment(segment: segment)
             .subscribe(onNext: { [weak self] posts in
                 self?.data.accept(posts)
             })

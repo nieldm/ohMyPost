@@ -45,6 +45,7 @@
 		B169B94721924D0F00D8FC91 /* PostsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B94621924D0F00D8FC91 /* PostsContainer.swift */; };
 		B169B949219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B948219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift */; };
 		B169B94B2192513900D8FC91 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169B94A2192513900D8FC91 /* Managed.swift */; };
+		B169B94E219293B600D8FC91 /* postsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B169B94D219293B600D8FC91 /* postsResponse.json */; };
 		B194F930218F72BA0057C0C3 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F92F218F72BA0057C0C3 /* StyleGuide.swift */; };
 		B194F936218F75410057C0C3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F934218F75410057C0C3 /* PostTableViewCell.swift */; };
 		B194F937218F75410057C0C3 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194F935218F75410057C0C3 /* PostsViewController.swift */; };
@@ -147,6 +148,7 @@
 		B169B94621924D0F00D8FC91 /* PostsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsContainer.swift; sourceTree = "<group>"; };
 		B169B948219250E600D8FC91 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		B169B94A2192513900D8FC91 /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
+		B169B94D219293B600D8FC91 /* postsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = postsResponse.json; sourceTree = "<group>"; };
 		B194F92F218F72BA0057C0C3 /* StyleGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		B194F934218F75410057C0C3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		B194F935218F75410057C0C3 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				B118F021218F60E400E7DBB8 /* JSONPlaceholderAPI.swift */,
+				B169B94C219293B600D8FC91 /* Mocks */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -370,6 +373,14 @@
 				B169B94421924C9300D8FC91 /* PostItem.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		B169B94C219293B600D8FC91 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B169B94D219293B600D8FC91 /* postsResponse.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		B194F933218F75410057C0C3 /* Posts */ = {
@@ -575,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B12AAB15218F59F50061FE84 /* LaunchScreen.storyboard in Resources */,
+				B169B94E219293B600D8FC91 /* postsResponse.json in Resources */,
 				B12AAB12218F59F50061FE84 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

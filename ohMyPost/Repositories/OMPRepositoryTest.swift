@@ -6,7 +6,7 @@ class OMPRepositoryTest: XCTestCase {
     var sut: OMPRepository!
     
     override func setUp() {
-        self.sut = OMPRepository()
+        self.sut = OMPRepository(mocked: true)
     }
 
     func test_getPosts() {
@@ -23,8 +23,8 @@ class OMPRepositoryTest: XCTestCase {
             guard let post = posts.first else {
                 fatalError("No Posts")
             }
-            XCTAssertEqual(post.title, "sunt aut facere repellat provident occaecati excepturi optio reprehenderit")
-            XCTAssertEqual(post.body, "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto")
+            XCTAssertEqual(post.title, "Oh My Posts!")
+            XCTAssertEqual(post.body, "This app is Awesome!")
             expectation.fulfill()
         }
     }

@@ -30,7 +30,14 @@ class MockedAPI {}
 
 extension MockedAPI: PostDetailAPI {
     func getUser(userId: Int, callback: (User?) -> ()) {
-        callback(User(id: 0, username: "nieldm", name: "Daniel Mendez", phone: "317000000", website: "nieldm.com"))
+        callback(User(
+            id: 0,
+            username: "nieldm",
+            name: "Daniel Mendez",
+            phone: "317000000",
+            website: "nieldm.com",
+            email: "nieldm@gmail.com"
+        ))
     }
     
     func getComment(postId: Int, callback: @escaping ([Comment]) -> ()) {

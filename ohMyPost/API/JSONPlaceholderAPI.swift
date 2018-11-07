@@ -31,7 +31,16 @@ extension JSONPlaceholderAPI: TargetType {
     }
     
     var sampleData: Data {
-        return Data()
+        switch self {
+        case .posts:
+            guard let
+                path = Bundle.main.path(forResource: "postsResponse", ofType: "json"),
+                let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+                    return Data()
+            }
+            return data
+        default: return Data()
+        }
     }
     
     var task: Task {

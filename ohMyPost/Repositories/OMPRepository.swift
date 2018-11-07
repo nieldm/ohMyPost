@@ -5,8 +5,12 @@ import Moya
 class OMPRepository {
     let api: MoyaProvider<JSONPlaceholderAPI>
     
-    init() {
-        self.api = MoyaProvider<JSONPlaceholderAPI>()
+    init(mocked: Bool) {
+        if mocked {
+            self.api = MoyaProvider<JSONPlaceholderAPI>(stubClosure: MoyaProvider.immediatelyStub)
+        } else {
+            self.api = MoyaProvider<JSONPlaceholderAPI>()
+        }
     }
 }
 

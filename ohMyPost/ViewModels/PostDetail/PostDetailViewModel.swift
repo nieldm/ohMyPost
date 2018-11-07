@@ -2,16 +2,19 @@ import Foundation
 import ohMyPostBase
 import RxSwift
 import RxCocoa
+import CoreData
 
 class PostDetailViewModel {
     
+    let context: NSManagedObjectContext
     private let disposeBag = DisposeBag()
     
     let model: PostDetailModel
     let data: BehaviorRelay<[SectionOfPostDetail]>
     
-    init(model: PostDetailModel) {
+    init(model: PostDetailModel, context: NSManagedObjectContext) {
         self.model = model
+        self.context = context
         let postSection = SectionOfPostDetail(
             header: "Description",
             items: [PostDetailSection.post(model.post)]
@@ -47,6 +50,22 @@ class PostDetailViewModel {
             .sorted()
             .bind(to: self.data)
             .disposed(by: self.disposeBag)
+    }
+    
+    func markAsFavorite() {
+        let request = NSFetchRequest<PostItem>(entityName: "PostItem")
+        request.predicate = NSPredicate(format: "postId == %i", model.post.id)
+        
+        let items = try? context.fetch(request)
+        if let item = items?.first {
+            self.context.performChanges {
+                item.toogleFavorite()
+            }
+            return
+        }
+        self.context.performChanges {
+            let _ = PostItem.insert(into: self.context, post: self.model.post, favorite: true)
+        }
     }
 }
 

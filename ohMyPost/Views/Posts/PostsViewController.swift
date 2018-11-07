@@ -66,6 +66,7 @@ class PostsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.reloadPosts()
+        self.tableView.reloadData()
     }
     
     private func configureTableView() {
@@ -96,11 +97,14 @@ class PostsViewController: UIViewController {
         self.tableView.rx.modelSelected(Post.self)
             .asDriver()
             .drive(onNext: { [weak self] post in
-                self?.viewModel.markAsRead(post: post)
+                guard let `self` = self else {
+                    return
+                }
+                self.viewModel.markAsRead(post: post)
                 let model = PostDetailModel(api: OMPRepository(), post: post)
-                let viewModel = PostDetailViewModel(model: model)
+                let viewModel = PostDetailViewModel(model: model, context: self.viewModel.context)
                 let viewController = PostDetailViewController(viewModel: viewModel)
-                self?.navigationController?.pushViewController(viewController, animated: true)
+                self.navigationController?.pushViewController(viewController, animated: true)
             })
             .disposed(by: disposeBag)
     }
